@@ -1,0 +1,31 @@
+<h2>Read</h2><br>
+<a href="/create"><button type="button" class="btn btn-primary">Incluir</button></a><br>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Idade</th>
+            <th scope="col">Opções</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each dados1}}
+        <tr>
+            <th scope="row">{{dataValues.id}}</th>
+            <td>{{dataValues.nome}}</td>
+            <td>{{dataValues.email}}</td>
+            <td>{{dataValues.idade}}</td>
+            <td>
+                <a href="http://localhost:8080/update/{{dataValues.id}}">
+                <button type="button" class="btn btn-warning">Editar</button>
+                </a> 
+                <a href="http://localhost:8080/delete/{{dataValues.id}}">
+                <button type="button" class="btn btn-danger">Excluir</button>
+                </a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

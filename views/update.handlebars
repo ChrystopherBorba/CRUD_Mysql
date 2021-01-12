@@ -1,0 +1,21 @@
+<h2>Update</h2><br>
+<form action="/update" method="POST">
+    <input type="hidden" name="id" value={{id}}>
+    {{#each dados3}}
+    <div class="mb-3">
+        <label class="form-label">Nome:</label>
+        <input class="form-control" type="text" name="nome" value={{dataValues.nome}}>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email:</label>
+        <input class="form-control" type="text" name="email" value={{dataValues.email}}>
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Idade:</label>
+        <input class="form-control" type="text" name="idade" value={{dataValues.idade}}>
+    </div>
+    <div class="d-grid gap-2">
+        <button type="submit" class="btn btn-primary" >Update</button>
+    </div>
+    {{/each}}
+</form>

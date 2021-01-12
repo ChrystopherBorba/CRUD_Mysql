@@ -1,0 +1,41 @@
+
+<h2>Read by name</h2><br>
+<form action="/search" method="POST">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Inserir nome" aria-label="Recipient's username" aria-describedby="basic-addon2" name="nome">
+        <div class="input-group-append">
+            <button type="submit" class="btn btn-outline-secondary" type="button">Search</button>
+        </div>
+    </div>
+</form><br>
+<form action="/search" method="GET"></form>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Idade</th>
+            <th scope="col">Opções</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each dados2}}
+        <tr>
+            <th scope="row">{{dataValues.id}}</th>
+            <td>{{dataValues.nome}}</td>
+            <td>{{dataValues.email}}</td>
+            <td>{{dataValues.idade}}</td>
+            <td>
+                <a href="http://localhost:8080/update/{{dataValues.id}}">
+                <button type="button" class="btn btn-warning">Editar</button>
+                </a> 
+                <a href="http://localhost:8080/delete/{{dataValues.id}}">
+                <button type="button" class="btn btn-danger">Excluir</button>
+                </a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</form>
